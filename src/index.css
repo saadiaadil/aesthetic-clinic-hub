@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Global styles — kept intentionally small. Visual styling lives in Tailwind
+ * utilities and reusable components; this file only sets document-level defaults
+ * taken from the Stitch export (warm ivory canvas, Plus Jakarta Sans body copy,
+ * Playfair Display headlines).
+ */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    /* Leave room for the fixed 80px public header when jumping to anchors. */
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    @apply bg-surface font-body-md text-body-md text-on-surface antialiased;
+    overscroll-behavior-y: none;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-primary-fixed text-on-primary-fixed;
+  }
+
+  img,
+  svg,
+  video {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  button:not(:disabled),
+  [role='button']:not([aria-disabled='true']) {
+    cursor: pointer;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    @apply text-outline;
+    opacity: 1;
+  }
+
+  /* Remove native number spinners; keep native date/time pickers. */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Visible, on-brand keyboard focus (DESIGN.md: plum ring). */
+  :focus-visible {
+    outline: 2px solid theme('colors.primary-container');
+    outline-offset: 2px;
+    border-radius: 0.375rem;
+  }
+
+  /* Lucide icons: lighten the stroke to match the Material Symbols Outlined weight used by Stitch. */
+  svg.lucide {
+    stroke-width: 1.75px;
+    flex-shrink: 0;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Stitch hides scrollbars on horizontal carousels and chip rows. */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Filled icon variant (Stitch: font-variation-settings 'FILL' 1). */
+  .icon-fill {
+    fill: currentColor;
+  }
+}

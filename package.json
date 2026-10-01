@@ -1,0 +1,40 @@
+{
+  "name": "aesthetic-clinic-hub",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Aesthetic Clinic Hub — aesthetic clinic discovery, comparison and booking platform for Riyadh (frontend).",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@fontsource-variable/playfair-display": "^5.3.0",
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
+    "@hookform/resolvers": "^5.9.1",
+    "framer-motion": "^12.43.0",
+    "lucide-react": "^1.49.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-hook-form": "^7.89.0",
+    "react-router": "^7.18.4",
+    "tailwind-merge": "^2.6.1",
+    "zod": "^3.25.76",
+    "zustand": "^5.0.15"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@vitejs/plugin-react": "^5.2.0",
+    "autoprefixer": "^10.6.1",
+    "eslint": "^9.39.5",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.12.0",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "vite": "^7.3.6"
+  }
+}
